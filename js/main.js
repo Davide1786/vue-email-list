@@ -11,10 +11,21 @@ const app = new Vue({
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail') 
             .then((ele) => {
                this.mail.push(ele.data.response);
-            });
-           
+               if(this.mail < 10){
+                  
+               }
+            });       
          }
       }
+   // mounted() {
+   //       let index = 10;
+   //       for(let i = 0; i < index; i++){
+   //          axios.get('https://flynn.boolean.careers/exercises/api/random/mail') 
+   //          .then((ele) => {
+   //             this.mail.push(ele.data.response);
+   //          });         
+   //       }
+   //    }
 
 })
 
