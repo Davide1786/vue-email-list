@@ -4,6 +4,7 @@ const app = new Vue({
    el: '#app',
    data: {
       mail: [],
+      end: false,
    },
    mounted() {
          let index = 10;
@@ -11,23 +12,19 @@ const app = new Vue({
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail') 
             .then((ele) => {
                this.mail.push(ele.data.response);
-               if(this.mail < 10){
-                  
+               if(this.mail.length >= index){ 
+                  this.end = true;
                }
             });       
          }
       }
-   // mounted() {
-   //       let index = 10;
-   //       for(let i = 0; i < index; i++){
-   //          axios.get('https://flynn.boolean.careers/exercises/api/random/mail') 
-   //          .then((ele) => {
-   //             this.mail.push(ele.data.response);
-   //          });         
-   //       }
-   //    }
-
 })
+
+
+
+
+
+
 
 
 
@@ -53,3 +50,5 @@ const app = new Vue({
 
 // })
 
+
+// this.end = (this.mail.length >= index);
